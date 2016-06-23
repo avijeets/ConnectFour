@@ -13,6 +13,7 @@
 		09624CA31D1CA09A0003C3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09624CA21D1CA09A0003C3F5 /* Assets.xcassets */; };
 		09624CA61D1CA09A0003C3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */; };
 		09624CB11D1CA09B0003C3F5 /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */; };
+		09624CBC1D1CA0BA0003C3F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 09624CBB1D1CA0BA0003C3F5 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		09624CAC1D1CA09B0003C3F5 /* ConnectFourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectFourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourTests.swift; sourceTree = "<group>"; };
 		09624CB21D1CA09B0003C3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09624CBB1D1CA0BA0003C3F5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		09624C8F1D1CA09A0003C3F5 = {
 			isa = PBXGroup;
 			children = (
+				09624CBB1D1CA0BA0003C3F5 /* .gitignore */,
 				09624C9A1D1CA09A0003C3F5 /* ConnectFour */,
 				09624CAF1D1CA09B0003C3F5 /* ConnectFourTests */,
 				09624C991D1CA09A0003C3F5 /* Products */,
@@ -183,6 +186,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09624CBC1D1CA0BA0003C3F5 /* .gitignore in Resources */,
 				09624CA61D1CA09A0003C3F5 /* LaunchScreen.storyboard in Resources */,
 				09624CA31D1CA09A0003C3F5 /* Assets.xcassets in Resources */,
 				09624CA11D1CA09A0003C3F5 /* Main.storyboard in Resources */,
