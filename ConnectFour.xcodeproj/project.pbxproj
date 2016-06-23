@@ -14,6 +14,8 @@
 		09624CA61D1CA09A0003C3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */; };
 		09624CB11D1CA09B0003C3F5 /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */; };
 		09624CBC1D1CA0BA0003C3F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 09624CBB1D1CA0BA0003C3F5 /* .gitignore */; };
+		09624CBE1D1CA1770003C3F5 /* ConnectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */; };
+		09624CC01D1CA1A90003C3F5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourTests.swift; sourceTree = "<group>"; };
 		09624CB21D1CA09B0003C3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09624CBB1D1CA0BA0003C3F5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFour.swift; sourceTree = "<group>"; };
+		09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				09624CA21D1CA09A0003C3F5 /* Assets.xcassets */,
 				09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */,
 				09624CA71D1CA09A0003C3F5 /* Info.plist */,
+				09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */,
+				09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */,
 			);
 			path = ConnectFour;
 			sourceTree = "<group>";
@@ -208,6 +214,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				09624C9E1D1CA09A0003C3F5 /* ViewController.swift in Sources */,
+				09624CC01D1CA1A90003C3F5 /* UIColor+Hex.swift in Sources */,
+				09624CBE1D1CA1770003C3F5 /* ConnectFour.swift in Sources */,
 				09624C9C1D1CA09A0003C3F5 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
