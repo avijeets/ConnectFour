@@ -85,7 +85,7 @@ class ConnectFour {
     }
     
     var requiredInRow: Int = 4
-
+    
     // MARK: Initializers
     
     init(player: CFPlayer, opponent: CFPlayer, columns: Int = 7, rows: Int = 6) {
@@ -101,7 +101,7 @@ class ConnectFour {
         
         grid = board
     }
-
+    
     // MARK: Board manipulation
     
     func drop(in column: Int) throws -> (column: Int, row: Int) {
@@ -143,7 +143,7 @@ class ConnectFour {
     func checkWinner() -> CFPlayer? {
         return checkDiagonals() ?? checkAntidiagonals() ?? checkRows(for: grid) ?? checkColumns()
     }
-
+    
     private func checkDiagonals() -> CFPlayer? {
         var newGrid: [[CFCellState]] = grid
         for i in 0..<grid.count {

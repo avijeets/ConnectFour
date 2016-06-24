@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ConnectFour.xcscheme</key>
+		<key>MessagesExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>09624C971D1CA09A0003C3F5</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>09624CAB1D1CA09B0003C3F5</key>
+		<key>09091A2D1D1CCADE0024BDAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

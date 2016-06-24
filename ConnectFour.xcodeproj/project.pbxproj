@@ -7,168 +7,177 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		09624C9C1D1CA09A0003C3F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624C9B1D1CA09A0003C3F5 /* AppDelegate.swift */; };
-		09624C9E1D1CA09A0003C3F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624C9D1D1CA09A0003C3F5 /* ViewController.swift */; };
-		09624CA11D1CA09A0003C3F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09624C9F1D1CA09A0003C3F5 /* Main.storyboard */; };
-		09624CA31D1CA09A0003C3F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09624CA21D1CA09A0003C3F5 /* Assets.xcassets */; };
-		09624CA61D1CA09A0003C3F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */; };
-		09624CB11D1CA09B0003C3F5 /* ConnectFourTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */; };
-		09624CBC1D1CA0BA0003C3F5 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 09624CBB1D1CA0BA0003C3F5 /* .gitignore */; };
-		09624CBE1D1CA1770003C3F5 /* ConnectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */; };
-		09624CC01D1CA1A90003C3F5 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */; };
+		09091A281D1CCADE0024BDAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09091A271D1CCADE0024BDAF /* Assets.xcassets */; };
+		09091A2F1D1CCADE0024BDAF /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09091A2E1D1CCADE0024BDAF /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		09091A341D1CCADE0024BDAF /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09091A331D1CCADE0024BDAF /* Messages.framework */; };
+		09091A371D1CCADE0024BDAF /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09091A361D1CCADE0024BDAF /* MessagesViewController.swift */; };
+		09091A3A1D1CCADE0024BDAF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09091A381D1CCADE0024BDAF /* MainInterface.storyboard */; };
+		09091A3C1D1CCADE0024BDAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09091A3B1D1CCADE0024BDAF /* Assets.xcassets */; };
+		09091A481D1CCAF00024BDAF /* ConnectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09091A471D1CCAF00024BDAF /* ConnectFour.swift */; };
+		09091A4A1D1CCAFE0024BDAF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09091A491D1CCAFE0024BDAF /* UIColor+Hex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		09624CAD1D1CA09B0003C3F5 /* PBXContainerItemProxy */ = {
+		09091A301D1CCADE0024BDAF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 09624C901D1CA09A0003C3F5 /* Project object */;
+			containerPortal = 09091A1E1D1CCADE0024BDAF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 09624C971D1CA09A0003C3F5;
-			remoteInfo = ConnectFour;
+			remoteGlobalIDString = 09091A2D1D1CCADE0024BDAF;
+			remoteInfo = MessagesExtension;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		09091A431D1CCADE0024BDAF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				09091A2F1D1CCADE0024BDAF /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		09624C981D1CA09A0003C3F5 /* ConnectFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		09624C9B1D1CA09A0003C3F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		09624C9D1D1CA09A0003C3F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		09624CA01D1CA09A0003C3F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		09624CA21D1CA09A0003C3F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		09624CA51D1CA09A0003C3F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		09624CA71D1CA09A0003C3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09624CAC1D1CA09B0003C3F5 /* ConnectFourTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectFourTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectFourTests.swift; sourceTree = "<group>"; };
-		09624CB21D1CA09B0003C3F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		09624CBB1D1CA0BA0003C3F5 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFour.swift; sourceTree = "<group>"; };
-		09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		09091A241D1CCADE0024BDAF /* ConnectFour.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectFour.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09091A271D1CCADE0024BDAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09091A291D1CCADE0024BDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09091A2E1D1CCADE0024BDAF /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		09091A331D1CCADE0024BDAF /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		09091A361D1CCADE0024BDAF /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		09091A391D1CCADE0024BDAF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		09091A3B1D1CCADE0024BDAF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		09091A3D1D1CCADE0024BDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09091A471D1CCAF00024BDAF /* ConnectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFour.swift; sourceTree = "<group>"; };
+		09091A491D1CCAFE0024BDAF /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		09624C951D1CA09A0003C3F5 /* Frameworks */ = {
+		09091A2B1D1CCADE0024BDAF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09624CA91D1CA09B0003C3F5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				09091A341D1CCADE0024BDAF /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09624C8F1D1CA09A0003C3F5 = {
+		09091A1D1D1CCADE0024BDAF = {
 			isa = PBXGroup;
 			children = (
-				09624CBB1D1CA0BA0003C3F5 /* .gitignore */,
-				09624C9A1D1CA09A0003C3F5 /* ConnectFour */,
-				09624CAF1D1CA09B0003C3F5 /* ConnectFourTests */,
-				09624C991D1CA09A0003C3F5 /* Products */,
+				09091A261D1CCADE0024BDAF /* ConnectFour */,
+				09091A351D1CCADE0024BDAF /* MessagesExtension */,
+				09091A321D1CCADE0024BDAF /* Frameworks */,
+				09091A251D1CCADE0024BDAF /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		09624C991D1CA09A0003C3F5 /* Products */ = {
+		09091A251D1CCADE0024BDAF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				09624C981D1CA09A0003C3F5 /* ConnectFour.app */,
-				09624CAC1D1CA09B0003C3F5 /* ConnectFourTests.xctest */,
+				09091A241D1CCADE0024BDAF /* ConnectFour.app */,
+				09091A2E1D1CCADE0024BDAF /* MessagesExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		09624C9A1D1CA09A0003C3F5 /* ConnectFour */ = {
+		09091A261D1CCADE0024BDAF /* ConnectFour */ = {
 			isa = PBXGroup;
 			children = (
-				09624C9B1D1CA09A0003C3F5 /* AppDelegate.swift */,
-				09624C9D1D1CA09A0003C3F5 /* ViewController.swift */,
-				09624C9F1D1CA09A0003C3F5 /* Main.storyboard */,
-				09624CA21D1CA09A0003C3F5 /* Assets.xcassets */,
-				09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */,
-				09624CA71D1CA09A0003C3F5 /* Info.plist */,
-				09624CBD1D1CA1770003C3F5 /* ConnectFour.swift */,
-				09624CBF1D1CA1A90003C3F5 /* UIColor+Hex.swift */,
+				09091A271D1CCADE0024BDAF /* Assets.xcassets */,
+				09091A291D1CCADE0024BDAF /* Info.plist */,
 			);
 			path = ConnectFour;
 			sourceTree = "<group>";
 		};
-		09624CAF1D1CA09B0003C3F5 /* ConnectFourTests */ = {
+		09091A321D1CCADE0024BDAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				09624CB01D1CA09B0003C3F5 /* ConnectFourTests.swift */,
-				09624CB21D1CA09B0003C3F5 /* Info.plist */,
+				09091A331D1CCADE0024BDAF /* Messages.framework */,
 			);
-			path = ConnectFourTests;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		09091A351D1CCADE0024BDAF /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				09091A361D1CCADE0024BDAF /* MessagesViewController.swift */,
+				09091A471D1CCAF00024BDAF /* ConnectFour.swift */,
+				09091A491D1CCAFE0024BDAF /* UIColor+Hex.swift */,
+				09091A381D1CCADE0024BDAF /* MainInterface.storyboard */,
+				09091A3B1D1CCADE0024BDAF /* Assets.xcassets */,
+				09091A3D1D1CCADE0024BDAF /* Info.plist */,
+			);
+			path = MessagesExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		09624C971D1CA09A0003C3F5 /* ConnectFour */ = {
+		09091A231D1CCADE0024BDAF /* ConnectFour */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09624CB51D1CA09B0003C3F5 /* Build configuration list for PBXNativeTarget "ConnectFour" */;
+			buildConfigurationList = 09091A441D1CCADE0024BDAF /* Build configuration list for PBXNativeTarget "ConnectFour" */;
 			buildPhases = (
-				09624C941D1CA09A0003C3F5 /* Sources */,
-				09624C951D1CA09A0003C3F5 /* Frameworks */,
-				09624C961D1CA09A0003C3F5 /* Resources */,
+				09091A221D1CCADE0024BDAF /* Resources */,
+				09091A431D1CCADE0024BDAF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				09091A311D1CCADE0024BDAF /* PBXTargetDependency */,
 			);
 			name = ConnectFour;
 			productName = ConnectFour;
-			productReference = 09624C981D1CA09A0003C3F5 /* ConnectFour.app */;
-			productType = "com.apple.product-type.application";
+			productReference = 09091A241D1CCADE0024BDAF /* ConnectFour.app */;
+			productType = "com.apple.product-type.application.messages";
 		};
-		09624CAB1D1CA09B0003C3F5 /* ConnectFourTests */ = {
+		09091A2D1D1CCADE0024BDAF /* MessagesExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09624CB81D1CA09B0003C3F5 /* Build configuration list for PBXNativeTarget "ConnectFourTests" */;
+			buildConfigurationList = 09091A401D1CCADE0024BDAF /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
 			buildPhases = (
-				09624CA81D1CA09B0003C3F5 /* Sources */,
-				09624CA91D1CA09B0003C3F5 /* Frameworks */,
-				09624CAA1D1CA09B0003C3F5 /* Resources */,
+				09091A2A1D1CCADE0024BDAF /* Sources */,
+				09091A2B1D1CCADE0024BDAF /* Frameworks */,
+				09091A2C1D1CCADE0024BDAF /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				09624CAE1D1CA09B0003C3F5 /* PBXTargetDependency */,
 			);
-			name = ConnectFourTests;
-			productName = ConnectFourTests;
-			productReference = 09624CAC1D1CA09B0003C3F5 /* ConnectFourTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 09091A2E1D1CCADE0024BDAF /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		09624C901D1CA09A0003C3F5 /* Project object */ = {
+		09091A1E1D1CCADE0024BDAF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = amarjayr;
 				TargetAttributes = {
-					09624C971D1CA09A0003C3F5 = {
+					09091A231D1CCADE0024BDAF = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = BW8E2XTFK5;
 						DevelopmentTeamName = "Amar Ramachandran (Personal Team)";
 						ProvisioningStyle = Automatic;
 					};
-					09624CAB1D1CA09B0003C3F5 = {
+					09091A2D1D1CCADE0024BDAF = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = BW8E2XTFK5;
 						DevelopmentTeamName = "Amar Ramachandran (Personal Team)";
 						ProvisioningStyle = Automatic;
-						TestTargetID = 09624C971D1CA09A0003C3F5;
 					};
 				};
 			};
-			buildConfigurationList = 09624C931D1CA09A0003C3F5 /* Build configuration list for PBXProject "ConnectFour" */;
+			buildConfigurationList = 09091A211D1CCADE0024BDAF /* Build configuration list for PBXProject "ConnectFour" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -176,89 +185,71 @@
 				en,
 				Base,
 			);
-			mainGroup = 09624C8F1D1CA09A0003C3F5;
-			productRefGroup = 09624C991D1CA09A0003C3F5 /* Products */;
+			mainGroup = 09091A1D1D1CCADE0024BDAF;
+			productRefGroup = 09091A251D1CCADE0024BDAF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				09624C971D1CA09A0003C3F5 /* ConnectFour */,
-				09624CAB1D1CA09B0003C3F5 /* ConnectFourTests */,
+				09091A231D1CCADE0024BDAF /* ConnectFour */,
+				09091A2D1D1CCADE0024BDAF /* MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		09624C961D1CA09A0003C3F5 /* Resources */ = {
+		09091A221D1CCADE0024BDAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09624CBC1D1CA0BA0003C3F5 /* .gitignore in Resources */,
-				09624CA61D1CA09A0003C3F5 /* LaunchScreen.storyboard in Resources */,
-				09624CA31D1CA09A0003C3F5 /* Assets.xcassets in Resources */,
-				09624CA11D1CA09A0003C3F5 /* Main.storyboard in Resources */,
+				09091A281D1CCADE0024BDAF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		09624CAA1D1CA09B0003C3F5 /* Resources */ = {
+		09091A2C1D1CCADE0024BDAF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09091A3C1D1CCADE0024BDAF /* Assets.xcassets in Resources */,
+				09091A3A1D1CCADE0024BDAF /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		09624C941D1CA09A0003C3F5 /* Sources */ = {
+		09091A2A1D1CCADE0024BDAF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09624C9E1D1CA09A0003C3F5 /* ViewController.swift in Sources */,
-				09624CC01D1CA1A90003C3F5 /* UIColor+Hex.swift in Sources */,
-				09624CBE1D1CA1770003C3F5 /* ConnectFour.swift in Sources */,
-				09624C9C1D1CA09A0003C3F5 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		09624CA81D1CA09B0003C3F5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				09624CB11D1CA09B0003C3F5 /* ConnectFourTests.swift in Sources */,
+				09091A4A1D1CCAFE0024BDAF /* UIColor+Hex.swift in Sources */,
+				09091A481D1CCAF00024BDAF /* ConnectFour.swift in Sources */,
+				09091A371D1CCADE0024BDAF /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		09624CAE1D1CA09B0003C3F5 /* PBXTargetDependency */ = {
+		09091A311D1CCADE0024BDAF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 09624C971D1CA09A0003C3F5 /* ConnectFour */;
-			targetProxy = 09624CAD1D1CA09B0003C3F5 /* PBXContainerItemProxy */;
+			target = 09091A2D1D1CCADE0024BDAF /* MessagesExtension */;
+			targetProxy = 09091A301D1CCADE0024BDAF /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		09624C9F1D1CA09A0003C3F5 /* Main.storyboard */ = {
+		09091A381D1CCADE0024BDAF /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				09624CA01D1CA09A0003C3F5 /* Base */,
+				09091A391D1CCADE0024BDAF /* Base */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		09624CA41D1CA09A0003C3F5 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				09624CA51D1CA09A0003C3F5 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		09624CB31D1CA09B0003C3F5 /* Debug */ = {
+		09091A3E1D1CCADE0024BDAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -305,7 +296,7 @@
 			};
 			name = Debug;
 		};
-		09624CB41D1CA09B0003C3F5 /* Release */ = {
+		09091A3F1D1CCADE0024BDAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -345,85 +336,87 @@
 			};
 			name = Release;
 		};
-		09624CB61D1CA09B0003C3F5 /* Debug */ = {
+		09091A411D1CCADE0024BDAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ConnectFour/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		09624CB71D1CA09B0003C3F5 /* Release */ = {
+		09091A421D1CCADE0024BDAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = ConnectFour/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour.MessagesExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
-		09624CB91D1CA09B0003C3F5 /* Debug */ = {
+		09091A451D1CCADE0024BDAF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConnectFourTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFourTests;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConnectFour/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectFour.app/ConnectFour";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		09624CBA1D1CA09B0003C3F5 /* Release */ = {
+		09091A461D1CCADE0024BDAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = ConnectFourTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFourTests;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = ConnectFour/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.amarjayr.ConnectFour;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ConnectFour.app/ConnectFour";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		09624C931D1CA09A0003C3F5 /* Build configuration list for PBXProject "ConnectFour" */ = {
+		09091A211D1CCADE0024BDAF /* Build configuration list for PBXProject "ConnectFour" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09624CB31D1CA09B0003C3F5 /* Debug */,
-				09624CB41D1CA09B0003C3F5 /* Release */,
+				09091A3E1D1CCADE0024BDAF /* Debug */,
+				09091A3F1D1CCADE0024BDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		09624CB51D1CA09B0003C3F5 /* Build configuration list for PBXNativeTarget "ConnectFour" */ = {
+		09091A401D1CCADE0024BDAF /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09624CB61D1CA09B0003C3F5 /* Debug */,
-				09624CB71D1CA09B0003C3F5 /* Release */,
+				09091A411D1CCADE0024BDAF /* Debug */,
+				09091A421D1CCADE0024BDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
-		09624CB81D1CA09B0003C3F5 /* Build configuration list for PBXNativeTarget "ConnectFourTests" */ = {
+		09091A441D1CCADE0024BDAF /* Build configuration list for PBXNativeTarget "ConnectFour" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				09624CB91D1CA09B0003C3F5 /* Debug */,
-				09624CBA1D1CA09B0003C3F5 /* Release */,
+				09091A451D1CCADE0024BDAF /* Debug */,
+				09091A461D1CCADE0024BDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 09624C901D1CA09A0003C3F5 /* Project object */;
+	rootObject = 09091A1E1D1CCADE0024BDAF /* Project object */;
 }
