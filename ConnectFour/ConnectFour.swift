@@ -44,7 +44,7 @@ func == (lhs: CFPlayer, rhs: CFPlayer) -> Bool {
     return lhs.uuid == rhs.uuid
 }
 
-enum TTTError: ErrorProtocol, CustomStringConvertible {
+enum CFError: ErrorProtocol, CustomStringConvertible {
     case rowFull
     case notPlayerTurn
     case gameDone
@@ -70,30 +70,32 @@ class ConnectFour {
         return [player, opponent]
     }
     
-    var size: CGSize {
-        return CGSize(width: grid.count, height: grid[0].count)
+    var size: (columns: Int, rows: Int) {
+        return (grid.count, grid[0].count)
     }
     
     var winner: CFPlayer? {
         return checkWinner() ?? nil
     }
     
-    subscript(row: Int, column: Int) -> CFCellState {
+    subscript(column: Int, row: Int) -> CFCellState {
         get {
-            return grid[row][column]
+            return grid[column][row]
         }
         set(value) {
-            grid[row][column] = value
+            grid[column][row] = value
         }
     }
+    
+    var requiredInRowCustom: Int = 4
 
     // MARK: Initializers
     
-    init(player: CFPlayer, opponent: CFPlayer, width: Int = 7, height: Int = 6) {
+    init(player: CFPlayer, opponent: CFPlayer, columns: Int = 7, rows: Int = 6) {
         self.player = player
         self.opponent = opponent
         
-        grid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: height)), count: width))
+        grid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: rows)), count: columns))
     }
     
     private init(player: CFPlayer, opponent: CFPlayer, board: [[CFCellState]]) {
@@ -105,12 +107,36 @@ class ConnectFour {
 
     // MARK: Board manipulation
     
-    func drop(in row: Int) throws {
+    func drop(in column: Int) throws {
+        guard column < size.columns && column >= 0 else {
+            fatalError("Coordinates not on grid")
+        }
         
+        guard winner == nil else {
+            throw CFError.gameDone
+        }
+        
+        guard moveCount(for: player) <= moveCount(for: opponent) else {
+            throw CFError.notPlayerTurn
+        }
+        
+        do {
+            let coordinates = try firstAvailableSpot(in: column)
+            
+            self[coordinates.column, coordinates.row] = CFCellState.occupied(player)
+        } catch CFError.rowFull {
+            throw CFError.rowFull
+        }
     }
     
-    private func firstAvailableSpot(in row: Int) -> (row: Int, column: Int) {
+    private func firstAvailableSpot(in column: Int) throws -> (column: Int, row: Int) {
+        for i in 0..<size.rows {
+            if case .empty = self[column, (size.rows-1)-i] {
+                return (column, (size.rows-1)-i)
+            }
+        }
         
+        throw CFError.rowFull
     }
     
     // MARK: Winning/Gameover handling
@@ -120,19 +146,19 @@ class ConnectFour {
     }
 
     private func checkDiagonals() -> CFPlayer? {
-        
+        return nil
     }
     
     private func checkAntidiagonals() -> CFPlayer? {
-        
+        return nil
     }
     
     private func checkColumns() -> CFPlayer? {
-        
+        return nil
     }
     
     private func checkRows() -> CFPlayer? {
-        
+        return nil
     }
     
     // MARK: Utility
