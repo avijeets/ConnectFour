@@ -15,6 +15,7 @@
 		09091A3C1D1CCADE0024BDAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09091A3B1D1CCADE0024BDAF /* Assets.xcassets */; };
 		09091A481D1CCAF00024BDAF /* ConnectFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09091A471D1CCAF00024BDAF /* ConnectFour.swift */; };
 		09091A4A1D1CCAFE0024BDAF /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09091A491D1CCAFE0024BDAF /* UIColor+Hex.swift */; };
+		09EF73631D4ADB1F00EA60D4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09EF73621D4ADB1F00EA60D4 /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		09091A3D1D1CCADE0024BDAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09091A471D1CCAF00024BDAF /* ConnectFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFour.swift; sourceTree = "<group>"; };
 		09091A491D1CCAFE0024BDAF /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
+		09EF73621D4ADB1F00EA60D4 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				09091A381D1CCADE0024BDAF /* MainInterface.storyboard */,
 				09091A3B1D1CCADE0024BDAF /* Assets.xcassets */,
 				09091A3D1D1CCADE0024BDAF /* Info.plist */,
+				09EF73621D4ADB1F00EA60D4 /* GameViewController.swift */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09EF73631D4ADB1F00EA60D4 /* GameViewController.swift in Sources */,
 				09091A4A1D1CCAFE0024BDAF /* UIColor+Hex.swift in Sources */,
 				09091A481D1CCAF00024BDAF /* ConnectFour.swift in Sources */,
 				09091A371D1CCADE0024BDAF /* MessagesViewController.swift in Sources */,
@@ -407,6 +411,7 @@
 				09091A421D1CCADE0024BDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09091A441D1CCADE0024BDAF /* Build configuration list for PBXNativeTarget "ConnectFour" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				09091A461D1CCADE0024BDAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

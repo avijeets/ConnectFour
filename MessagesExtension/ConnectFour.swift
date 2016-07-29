@@ -122,6 +122,8 @@ class ConnectFour {
             
             grid[coordinates.column][coordinates.row] = CFCellState.occupied(player)
             
+            print(grid.description);
+            
             return coordinates
         } catch CFError.rowFull {
             throw CFError.rowFull
@@ -162,8 +164,6 @@ class ConnectFour {
             let length = newGrid[i].count
             newGrid[i] += Array(repeatElement(CFCellState.empty, count: ((2*size.columns - 1) - length)))
         }
-        
-        print(newGrid.description)
         
         return checkRows(for: newGrid)
     }
