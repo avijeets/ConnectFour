@@ -276,12 +276,13 @@ extension ConnectFour {
     }
     
     static func boardFrom(json string: String) -> [[CFCellState]]? {
+        print(string)
         if let data = string.data(using: String.Encoding.utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String]]
                 let grid = json!
                 
-                var returnGrid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: grid.count)), count: grid.count))
+                var returnGrid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: grid[0].count)), count: grid.count))
                 
                 for i in 0..<grid.count {
                     for j in 0..<grid[0].count {
@@ -294,6 +295,8 @@ extension ConnectFour {
                         }
                     }
                 }
+                
+                print(returnGrid.description)
                 
                 return returnGrid
             } catch let error as NSError {
