@@ -47,7 +47,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     private func presentViewController(for conversation: MSConversation, with presentationStyle: MSMessagesAppPresentationStyle) {
         let controller: UIViewController
-        let game = ConnectFour(message: conversation.selectedMessage) ?? ConnectFour(player: CFPlayer(uuid: conversation.localParticipantIdentifier.uuidString, color: UIColor.random()), opponent: CFPlayer(uuid: conversation.remoteParticipantIdentifiers[0].uuidString, color: UIColor.random()), columns: 4, rows: 3);
+        let game = ConnectFour(message: conversation.selectedMessage, current: conversation.localParticipantIdentifier.uuidString) ?? ConnectFour(player: CFPlayer(uuid: conversation.localParticipantIdentifier.uuidString, color: UIColor.random()), opponent: CFPlayer(uuid: conversation.remoteParticipantIdentifiers[0].uuidString, color: UIColor.random()), columns: 4, rows: 3);
     
         controller = instantiateGameViewController(with: game);
         

@@ -45,11 +45,9 @@ extension GameViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("Cell " + String(indexPath.row));
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GameViewCell", for: indexPath);
         
         if case .occupied(let user) = game![Int(indexPath.row%(game?.size.columns)!), Int(floor(Double(indexPath.row/((game?.size.rows)!+1))))] {
-            print("OCCUPIED");
             cell.contentView.backgroundColor = user.color
         } else {
             cell.contentView.backgroundColor = #colorLiteral(red: 1, green: 0.99997437, blue: 0.9999912977, alpha: 1)

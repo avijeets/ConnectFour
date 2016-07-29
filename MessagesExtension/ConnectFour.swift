@@ -122,8 +122,6 @@ class ConnectFour {
             
             grid[coordinates.column][coordinates.row] = CFCellState.occupied(player)
             
-            print(grid.description);
-            
             return coordinates
         } catch CFError.rowFull {
             throw CFError.rowFull
@@ -275,8 +273,20 @@ extension ConnectFour {
         }
     }
     
+    func playersToJSON() -> String? {
+        let playersArray: [CFPlayer] = players
+        
+        do {
+            let data = try JSONSerialization.data(withJSONObject: playersArray.map({ (value: CFPlayer) -> String in
+                return String(value)
+            }), options: .prettyPrinted)
+            return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
+        } catch {
+            return nil
+        }
+    }
+    
     static func boardFrom(json string: String) -> [[CFCellState]]? {
-        print(string)
         if let data = string.data(using: String.Encoding.utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String]]
@@ -295,15 +305,33 @@ extension ConnectFour {
                         }
                     }
                 }
-                
-                print(returnGrid.description)
-                
+                                
                 return returnGrid
             } catch let error as NSError {
                 fatalError("JSON PARSING ERROR: " + error.description)
             }
         } else {
             fatalError("boardFrom, unkown error")
+        }
+    }
+    
+    static func playersFromJSON(json string: String) -> [CFPlayer]? {
+        if let data = string.data(using: String.Encoding.utf8) {
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String]
+                
+                var returnGrid = [CFPlayer]()
+                
+                for playerStr in json! {
+                    returnGrid.append(CFPlayer(uuid: playerStr.components(separatedBy: ":/:")[0], color: UIColor(hex: playerStr.components(separatedBy: ":/:")[1])))
+                }
+                
+                return returnGrid
+            } catch let error as NSError {
+                fatalError("JSON PARSING ERROR: " + error.description)
+            }
+        } else {
+            fatalError("opponentsFrom, unkown error")
         }
     }
     
@@ -315,24 +343,35 @@ extension ConnectFour {
 extension ConnectFour {
     var queryItems: [URLQueryItem] {
         var items = [URLQueryItem]()
-        items.append(URLQueryItem(name: "Player", value: player.description))
-        items.append(URLQueryItem(name: "Opponent", value: opponent.description))
+        items.append(URLQueryItem(name: "Players", value: playersToJSON()))
         items.append(URLQueryItem(name: "Board", value: boardToJSON()))
         
         return items
     }
     
-    convenience init?(queryItems: [URLQueryItem]) {
-        self.init(player: ConnectFour.userFrom(string: queryItems[1].value!), opponent: ConnectFour.userFrom(string: queryItems[0].value!), board: ConnectFour.boardFrom(json: queryItems[2].value!)!)
+    convenience init?(queryItems: [URLQueryItem], current uuid: String) {
+        let players = ConnectFour.playersFromJSON(json: queryItems[0].value!)
+        var current: CFPlayer?
+        var opponent: CFPlayer?
+        
+        for player in players! {
+            if player.uuid == uuid {
+                current = player
+            } else {
+                opponent = player
+            }
+        }
+        
+        self.init(player: current!, opponent: opponent!, board: ConnectFour.boardFrom(json: queryItems[1].value!)!)
     }
 }
 
 extension ConnectFour {
-    convenience init?(message: MSMessage?) {
+    convenience init?(message: MSMessage?, current uuid: String) {
         guard let messageURL = message?.url else { return nil }
         guard let urlComponents = NSURLComponents(url: messageURL, resolvingAgainstBaseURL: false), let queryItems = urlComponents.queryItems else { return nil }
         
-        self.init(queryItems: queryItems)
+        self.init(queryItems: queryItems, current: uuid)
     }
 }
 
