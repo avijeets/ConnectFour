@@ -12,7 +12,7 @@ import Messages
 enum CFCellState: CustomStringConvertible {
     case empty
     case occupied(CFPlayer)
-    
+
     var description: String {
         switch self {
         case empty:
@@ -26,7 +26,7 @@ enum CFCellState: CustomStringConvertible {
 struct CFPlayer: CustomStringConvertible {
     var uuid: String!
     var color: UIColor!
-    
+
     var description: String {
         return uuid! + ":/:" + color.hexString(includeAlpha: false)
     }
@@ -48,7 +48,7 @@ enum CFError: Error, CustomStringConvertible {
     case rowFull
     case notPlayerTurn
     case gameDone
-    
+
     var description: String {
         switch self {
         case .rowFull:
@@ -63,87 +63,87 @@ enum CFError: Error, CustomStringConvertible {
 
 class ConnectFour {
     private var grid: [[CFCellState]]!
-    
+
     let player: CFPlayer!
     let opponent: CFPlayer!
     var players: [CFPlayer] {
         return [player, opponent]
     }
-    
+
     var size: (columns: Int, rows: Int) {
         return (grid.count, grid[0].count)
     }
-    
+
     var winner: CFPlayer? {
         return checkWinner() ?? nil
     }
-    
+
     subscript(column: Int, row: Int) -> CFCellState {
         get {
             return grid[column][row]
         }
     }
-    
+
     var requiredInRow: Int = 4
-    
+
     // MARK: Initializers
-    
+
     init(player: CFPlayer, opponent: CFPlayer, columns: Int = 7, rows: Int = 6) {
         self.player = player
         self.opponent = opponent
-        
+
         grid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: rows)), count: columns))
     }
-    
+
     private init(player: CFPlayer, opponent: CFPlayer, board: [[CFCellState]]) {
         self.player = player
         self.opponent = opponent
-        
+
         grid = board
     }
-    
+
     // MARK: Board manipulation
-    
+
     func drop(in column: Int) throws -> (column: Int, row: Int) {
         guard column < size.columns && column >= 0 else {
             fatalError("Coordinates not on grid")
         }
-        
+
         guard winner == nil else {
             throw CFError.gameDone
         }
-        
+
         guard moveCount(for: player) <= moveCount(for: opponent) else {
             throw CFError.notPlayerTurn
         }
-        
+
         do {
             let coordinates = try firstAvailableSpot(in: column)
-            
+
             grid[coordinates.column][coordinates.row] = CFCellState.occupied(player)
-            
+
             return coordinates
         } catch CFError.rowFull {
             throw CFError.rowFull
         }
     }
-    
+
     private func firstAvailableSpot(in column: Int) throws -> (column: Int, row: Int) {
         for i in 0..<size.rows {
             if case .empty = self[column, (size.rows-1)-i] {
                 return (column, (size.rows-1)-i)
             }
         }
-        
+
         throw CFError.rowFull
     }
-    
+
     // MARK: Winning/Gameover handling
-    
+
     func checkWinner() -> CFPlayer? {
         return checkDiagonals() ?? checkAntidiagonals() ?? checkRows(for: grid) ?? checkColumns()
     }
-    
+
     private func checkDiagonals() -> CFPlayer? {
         var newGrid: [[CFCellState]] = grid
         for i in 0..<grid.count {
@@ -151,10 +151,10 @@ class ConnectFour {
             let length = newGrid[i].count
             newGrid[i] += Array(repeatElement(CFCellState.empty, count: ((2*size.columns - 1) - length)))
         }
-        
+
         return checkRows(for: newGrid)
     }
-    
+
     private func checkAntidiagonals() -> CFPlayer? {
         var newGrid: [[CFCellState]] = grid
         for i in 0..<grid.count {
@@ -162,17 +162,17 @@ class ConnectFour {
             let length = newGrid[i].count
             newGrid[i] += Array(repeatElement(CFCellState.empty, count: ((2*size.columns - 1) - length)))
         }
-        
+
         return checkRows(for: newGrid)
     }
-    
+
     private func checkColumns() -> CFPlayer? {
         var owned = [CFPlayer: [Int]]()
-        
+
         for player in players {
             owned[player] =  Array(repeating: 0, count: size.columns)
         }
-        
+
         for i in 0..<grid.count {
             for j in 0..<grid[0].count {
                 var occupiedBy: CFPlayer?
@@ -180,34 +180,34 @@ class ConnectFour {
                     owned[user]![i] += 1
                     occupiedBy = user
                 }
-                
+
                 for (player, array) in owned {
                     for numberOwned in array {
                         if numberOwned == requiredInRow {
                             return player
                         }
                     }
-                    
+
                     if occupiedBy == nil {
                         owned[player]![i] = 0
                     } else if player != occupiedBy {
                         owned[player]![i] = 0
                     }
                 }
-                
+
             }
         }
-        
+
         return nil
     }
-    
+
     private func checkRows(for grid: [[CFCellState]]) -> CFPlayer? {
         var owned = [CFPlayer: [Int]]()
-        
+
         for player in players {
             owned[player] =  Array(repeating: 0, count: size.columns)
         }
-        
+
         for i in 0..<size.columns {
             for j in 0..<size.rows {
                 var occupiedBy: CFPlayer?
@@ -215,34 +215,34 @@ class ConnectFour {
                     owned[user]![j] += 1
                     occupiedBy = user
                 }
-                
+
                 for (player, array) in owned {
                     for numberOwned in array {
                         if numberOwned == requiredInRow {
                             return player
                         }
                     }
-                    
+
                     if occupiedBy == nil {
                         owned[player]![j] = 0
                     } else if player != occupiedBy {
                         owned[player]![j] = 0
                     }
                 }
-                
+
             }
         }
-        
+
         return nil
     }
-    
+
     // MARK: Utility
-    
+
     func moveCount(for player: CFPlayer?) -> Int {
         guard player == self.player || player == opponent else {
             fatalError("Player not part of game.")
         }
-        
+
         return grid.flatMap { $0 }.filter { (element) -> Bool in
             if case .occupied(let user) = element {
                 return user == player
@@ -250,7 +250,7 @@ class ConnectFour {
             return false
             }.count
     }
-    
+
     func containsUserWith(uuid user: String) -> Bool {
         return player.uuid == user || opponent.uuid == user
     }
@@ -264,7 +264,7 @@ extension ConnectFour {
                 for i in 0..<value.count {
                     array.append(String(value[i]))
                 }
-                
+
                 return array
             }), options: .prettyPrinted)
             return NSString(data: data, encoding: String.Encoding.utf8.rawValue)! as String
@@ -272,10 +272,10 @@ extension ConnectFour {
             return nil
         }
     }
-    
+
     func playersToJSON() -> String? {
         let playersArray: [CFPlayer] = players
-        
+
         do {
             let data = try JSONSerialization.data(withJSONObject: playersArray.map({ (value: CFPlayer) -> String in
                 return String(value)
@@ -285,27 +285,27 @@ extension ConnectFour {
             return nil
         }
     }
-    
+
     static func boardFrom(json string: String) -> [[CFCellState]]? {
         if let data = string.data(using: String.Encoding.utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String]]
                 let grid = json!
-                
+
                 var returnGrid = Array(repeatElement(Array(repeatElement(CFCellState.empty, count: grid[0].count)), count: grid.count))
-                
+
                 for i in 0..<grid.count {
                     for j in 0..<grid[0].count {
                         if grid[i][j] != "empty" {
                             var elComponents = grid[i][j].components(separatedBy: ":/:")
-                            
+
                             returnGrid[i][j] = CFCellState.occupied( CFPlayer(uuid: elComponents[0], color: UIColor(hex: elComponents[1])))
                         } else {
                             returnGrid[i][j] = CFCellState.empty
                         }
                     }
                 }
-                                
+
                 return returnGrid
             } catch let error as NSError {
                 fatalError("JSON PARSING ERROR: " + error.description)
@@ -314,18 +314,18 @@ extension ConnectFour {
             fatalError("boardFrom, unkown error")
         }
     }
-    
+
     static func playersFromJSON(json string: String) -> [CFPlayer]? {
         if let data = string.data(using: String.Encoding.utf8) {
             do {
                 let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String]
-                
+
                 var returnGrid = [CFPlayer]()
-                
+
                 for playerStr in json! {
                     returnGrid.append(CFPlayer(uuid: playerStr.components(separatedBy: ":/:")[0], color: UIColor(hex: playerStr.components(separatedBy: ":/:")[1])))
                 }
-                
+
                 return returnGrid
             } catch let error as NSError {
                 fatalError("JSON PARSING ERROR: " + error.description)
@@ -334,7 +334,7 @@ extension ConnectFour {
             fatalError("opponentsFrom, unkown error")
         }
     }
-    
+
     static func userFrom(string: String) -> CFPlayer {
         return CFPlayer(uuid: string.components(separatedBy: ":/:")[0], color: UIColor(hex: string.components(separatedBy: ":/:")[1]))
     }
@@ -345,15 +345,15 @@ extension ConnectFour {
         var items = [URLQueryItem]()
         items.append(URLQueryItem(name: "Players", value: playersToJSON()))
         items.append(URLQueryItem(name: "Board", value: boardToJSON()))
-        
+
         return items
     }
-    
+
     convenience init?(queryItems: [URLQueryItem], current uuid: String) {
         let players = ConnectFour.playersFromJSON(json: queryItems[0].value!)
         var current: CFPlayer?
         var opponent: CFPlayer?
-        
+
         for player in players! {
             if player.uuid == uuid {
                 current = player
@@ -361,7 +361,7 @@ extension ConnectFour {
                 opponent = player
             }
         }
-        
+
         self.init(player: current!, opponent: opponent!, board: ConnectFour.boardFrom(json: queryItems[1].value!)!)
     }
 }
@@ -370,7 +370,7 @@ extension ConnectFour {
     convenience init?(message: MSMessage?, current uuid: String) {
         guard let messageURL = message?.url else { return nil }
         guard let urlComponents = NSURLComponents(url: messageURL, resolvingAgainstBaseURL: false), let queryItems = urlComponents.queryItems else { return nil }
-        
+
         self.init(queryItems: queryItems, current: uuid)
     }
 }
