@@ -44,7 +44,7 @@ func == (lhs: CFPlayer, rhs: CFPlayer) -> Bool {
     return lhs.uuid == rhs.uuid
 }
 
-enum CFError: ErrorProtocol, CustomStringConvertible {
+enum CFError: Error, CustomStringConvertible {
     case rowFull
     case notPlayerTurn
     case gameDone
